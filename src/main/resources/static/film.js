@@ -32,16 +32,17 @@ event.preventDefault();
 
 //Lager funksjonen visBillett
 function visBillett(){
-    let ut="";
+    let ut="<ul>";
     for (let i=0; i<data.length; i++){
         let billett = data[i];
-        ut+= `${billett.film},  ${billett.count},  ${billett.fname},
-          ${billett.ename},  ${billett.nummer},  ${billett.post}`;
+        ut+= "<li>"+billett.film+", "+billett.count+", "+billett.fname+", "+billett.ename+", "+
+            billett.nummer+", "+billett.post+ "</li>";
     }
+    ut+="</ul>";
     liste.innerHTML = ut;
 }
 
-//Lager funksjonen slettBillett
+//Lager funksjonen slettBillett. Denne skal tømme arrayet når knappen blir trukket på.
 function slettBillett(){
     //Tømmer data-array
     data=[];
