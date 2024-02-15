@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Bestilling</title>
-
-    <h1>Bestilling av kinobiletter</h1>
-
 </head>
 
 <body>
+<h1>Bestilling av kinobiletter</h1>
+<form id="billettSkjema">
 <label for="film">Velg film: </label>
 <select id = "film" placeholder = "Velg film her" onchange="velg();">
-    <option>Tangled</option>
+    <option>Velg film</option>
     <option>Cinderella</option>
+    <option>Tangled</option>
     <option>Belle</option>
 </select> <br> <br>
 
-<label for = "antall">Antall</label>
+<label for = "antall">Antall: </label>
 <input type="number" id="antall" maxlength="3"/> <br> <br>
 
 <label for="fornavn">Fornavn: </label>
@@ -29,14 +29,16 @@
 <input type="text" id="telefonnr"  placeholder="Skriv inn telefonnr" maxlength="20"/> <br/>
 
 <label for="epost">Epost: </label>
-<input type="text" id="epost"  placeholder="Skriv inn epost" maxlength="20"/> <br/><br>
+<input type="text" id="epost"  placeholder="Skriv inn epost" maxlength="50"/> <br/><br>
 
-<input type="button" value="Kjøp bilett" onchange="getData();" /> <br />
-<script src="/film.js"></script>
-</body>
+<button type="LeggTil">Kjøp billett</button> <br />
+</form>
 
 <h2> Alle biletter</h2>
-<div id = "display" ></div>
-<p class = "output" id="output1"></p>
-<input type="button" value="Slett alle billettene"/>
+<ul id = "billettListe"> </ul>
+
+<button id="tom-array">Slett alle biletter</button>
+<script src="film.js"></script>
+
+</body>
 </html>
