@@ -6,7 +6,10 @@ let skjema =document.getElementById("billettSkjema");
 let liste = document.getElementById("billettListe");
 let slett = document.getElementById("tom-array");
 
+//Regex validering for telefonnummer.
 let nummerRegex =/^\d{8}$/;
+
+//Regex validering for e-post adresse.
 let postRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
 //Lager funksjonen LeggTilBillett.
@@ -46,6 +49,7 @@ event.preventDefault();
 //Lager funksjonen visBillett
 function visBillett(){
     let ut="<ul>";
+    //For-løkke som legger til billetter i data arrayet
     for (let i=0; i<data.length; i++){
         let billett = data[i];
         ut+= "<li>"+billett.film+", "+billett.antall+", "+billett.fnavn+", "+billett.enavn+", "+
@@ -63,5 +67,7 @@ function slettBillett(){
     visBillett();
 }
 
+//Funksjonen som legger til billetten blir kalt.
 skjema.addEventListener("submit", leggTilBillett);
+//Når knappen blir trykket på blir slettBillett funksjonen kalt
 slett.addEventListener("click", slettBillett);
