@@ -1,4 +1,5 @@
 # oblig-repo
+raras4012 Rabia Rasul
 
 Oblig1 Webprogrammeing (DATA1700)
 
@@ -11,5 +12,4 @@ og det blir da lagt inn i arrayet.
 
 Jeg har også brukt regex validering for at vi skal få inn riktig telefonnummer
 og riktig e-post adressen. Telefonnummer valideringen sørger for at den får inn
-8 sifre.
-
+8 sifre. Og e-mail valideringen sørger for at vi får inn gyldig e-post adresse.

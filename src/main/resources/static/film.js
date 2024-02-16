@@ -52,6 +52,7 @@ function visBillett(){
     //For-løkke som legger til billetter i data arrayet
     for (let i=0; i<data.length; i++){
         let billett = data[i];
+        //Informasjonen blir lagt inn i ut-strengen.
         ut+= "<li>"+billett.film+", "+billett.antall+", "+billett.fnavn+", "+billett.enavn+", "+
             billett.nummer+", "+billett.post+ "</li>";
     }
