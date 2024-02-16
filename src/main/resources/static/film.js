@@ -6,19 +6,32 @@ let skjema =document.getElementById("billettSkjema");
 let liste = document.getElementById("billettListe");
 let slett = document.getElementById("tom-array");
 
+let nummerRegex =/^\d{8}$/;
+let postRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
 //Lager funksjonen LeggTilBillett.
 function leggTilBillett(event){
 event.preventDefault();
     //Samler alle verdiene fra input-boksene
     let film = document.getElementById("film").value;
-    let count = document.getElementById("antall").value;
-    let fname = document.getElementById("fornavn").value;
-    let ename = document.getElementById("etternavn").value;
+    let antall = document.getElementById("antall").value;
+    let fnavn = document.getElementById("fornavn").value;
+    let enavn = document.getElementById("etternavn").value;
     let nummer = document.getElementById("telefonnr").value;
     let post = document.getElementById("epost").value;
 
+    if (!nummerRegex.test(nummer)){
+        alert("Du må taste inn et gyldig telefonnummer på 8 siffer.");
+        return;
+    }
+
+    if (!postRegex.test(post)){
+        alert("Du må skrive inn en gyldig epost.");
+        return;
+    }
+
     //Opprette billett
-    let billett ={film, count, fname, ename, nummer, post};
+    let billett ={film, antall, fnavn, enavn, nummer, post};
 
     //Legger til billetten i data-arrayet.
     data.push(billett);
@@ -35,7 +48,7 @@ function visBillett(){
     let ut="<ul>";
     for (let i=0; i<data.length; i++){
         let billett = data[i];
-        ut+= "<li>"+billett.film+", "+billett.count+", "+billett.fname+", "+billett.ename+", "+
+        ut+= "<li>"+billett.film+", "+billett.antall+", "+billett.fnavn+", "+billett.enavn+", "+
             billett.nummer+", "+billett.post+ "</li>";
     }
     ut+="</ul>";
@@ -52,5 +65,3 @@ function slettBillett(){
 
 skjema.addEventListener("submit", leggTilBillett);
 slett.addEventListener("click", slettBillett);
-
-
