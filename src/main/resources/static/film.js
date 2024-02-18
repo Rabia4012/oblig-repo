@@ -1,7 +1,7 @@
 //Oppretter et array for billettene.
 let data = [];
 
-//Henter elementer fra HTML dokumentet
+//Henter elementer fra HTML dokumentet.
 let skjema =document.getElementById("billettSkjema");
 let liste = document.getElementById("billettListe");
 let slett = document.getElementById("tom-array");
